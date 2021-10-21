@@ -6,8 +6,6 @@ function App() {
     return (
         <div>
             <TextCounter />
-            <TextCounter limit={5} />
-            <TextCounter limit={10} />
         </div>
     );
 }
