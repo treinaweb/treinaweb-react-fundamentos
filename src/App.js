@@ -1,12 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import TextCounter, { TextCounter2 } from './components/TextCounter';
+import TextCounter from './components/TextCounter';
 
 function App() {
     return (
         <div>
             <TextCounter />
-            <TextCounter2 />
+            <TextCounter limit={5} />
+            <TextCounter limit={10} />
         </div>
     );
 }
