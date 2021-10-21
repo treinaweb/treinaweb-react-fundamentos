@@ -1,12 +1,24 @@
 import { useState } from 'react';
 
 export default function TextCounter({ limit = 2, ...props }) {
-    const [contador, setContador] = useState(8);
+    const [text, setText] = useState('');
+
+    function handleChange(event) {
+        setText(event.target.value);
+        if (event.target.value.length >= limit) {
+            props?.onLimit();
+        }
+    }
 
     return (
         <div>
-            contador: {contador}
-            <input type={'text'} maxLength={limit} />
+            <input
+                type={'text'}
+                maxLength={limit}
+                value={text}
+                onChange={handleChange}
+            />
+            {text.length}/{limit}
         </div>
     );
 }
