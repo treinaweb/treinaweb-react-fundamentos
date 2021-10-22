@@ -14,11 +14,34 @@ const tweet = {
 };
 
 export default function Index() {
-    useIndex();
+    const { user } = useIndex();
     return (
         <div>
-            <TextInput />
-            <Tweet tweet={tweet} />
+            <h1 className={styles['page-title']}>TreinaTweet</h1>
+            <div className={styles['tweet-container']}>
+                <img
+                    src={user.picture}
+                    alt={user.name}
+                    className={styles['avatar']}
+                />
+                <TextInput />
+            </div>
+            <div className={styles['button-container']}>
+                <div>0 / 150</div>
+                <button className={styles['post-button']}>Tweetar</button>
+            </div>
+
+            <ul className={styles['tweet-list']}>
+                <li className={styles['tweet-list-item']}>
+                    <Tweet tweet={tweet} />
+                </li>
+                <li className={styles['tweet-list-item']}>
+                    <Tweet tweet={tweet} />
+                </li>
+                <li className={styles['tweet-list-item']}>
+                    <Tweet tweet={tweet} />
+                </li>
+            </ul>
         </div>
     );
 }
